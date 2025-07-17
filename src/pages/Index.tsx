@@ -5,6 +5,7 @@ import WhyChooseUs from "@/components/WhyChooseUs";
 import Testimonials from "@/components/Testimonials";
 import TravelMoments from "@/components/TravelMoments";
 import ExploreByTheme from "@/components/ExploreByTheme";
+import UmrahVisa from "@/components/UmrahVisa";
 import TrustBadges from "@/components/TrustBadges";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
@@ -18,6 +19,7 @@ const Index = () => {
       <Testimonials />
       <TravelMoments />
       <ExploreByTheme />
+      <UmrahVisa />
       <TrustBadges />
       <Contact />
       <Footer />
