@@ -3,7 +3,7 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Travel-themed color palette and animations */
+/* Enhanced travel-themed color palette and animations */
 @layer base {
   :root {
     --background: 0 0% 100%;
@@ -12,7 +12,7 @@
     --card-foreground: 222.2 84% 4.9%;
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
-    --primary: 200 100% 40%;
+    --primary: 218 100% 66%;
     --primary-foreground: 210 40% 98%;
     --secondary: 210 40% 96.1%;
     --secondary-foreground: 222.2 47.4% 11.2%;
@@ -25,7 +25,7 @@
     --border: 214.3 31.8% 91.4%;
     --input: 214.3 31.8% 91.4%;
     --ring: 222.2 84% 4.9%;
-    --radius: 0.5rem;
+    --radius: 0.75rem;
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
     --sidebar-primary: 240 5.9% 10%;
@@ -34,6 +34,16 @@
     --sidebar-accent-foreground: 240 5.9% 10%;
     --sidebar-border: 220 13% 91%;
     --sidebar-ring: 217.2 91.2% 59.8%;
+    
+    /* Enhanced design tokens */
+    --gradient-primary: linear-gradient(135deg, hsl(218 100% 66%), hsl(268 71% 62%));
+    --gradient-secondary: linear-gradient(135deg, hsl(30 100% 65%), hsl(340 75% 55%));
+    --gradient-neutral: linear-gradient(180deg, hsl(0 0% 98%), hsl(210 40% 96%));
+    --shadow-soft: 0 4px 20px -4px hsl(218 100% 66% / 0.15);
+    --shadow-medium: 0 8px 30px -8px hsl(218 100% 66% / 0.25);
+    --shadow-strong: 0 16px 40px -12px hsl(218 100% 66% / 0.35);
+    --glow-primary: 0 0 40px hsl(218 100% 66% / 0.3);
+    --glow-accent: 0 0 30px hsl(30 100% 65% / 0.4);
   }
 
   .dark {
@@ -93,29 +103,54 @@
   }
   
   .glass-effect {
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(16px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+  }
+  
+  .glass-dark {
+    background: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(16px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.1);
   }
   
   .gradient-text {
-    background: linear-gradient(135deg, #06b6d4, #f59e0b);
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  .gradient-text-secondary {
+    background: var(--gradient-secondary);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
   
   .travel-gradient {
-    background: linear-gradient(135deg, #06b6d4 0%, #3b82f6 25%, #8b5cf6 50%, #f59e0b 75%, #ef4444 100%);
+    background: linear-gradient(135deg, hsl(218 100% 66%) 0%, hsl(268 71% 62%) 25%, hsl(280 100% 70%) 50%, hsl(30 100% 65%) 75%, hsl(340 75% 55%) 100%);
   }
   
   .hover-glow {
-    transition: all 0.3s ease;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   }
   
   .hover-glow:hover {
-    box-shadow: 0 0 30px rgba(59, 130, 246, 0.5);
-    transform: translateY(-2px);
+    box-shadow: var(--glow-primary);
+    transform: translateY(-3px) scale(1.02);
+  }
+  
+  .card-premium {
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.8));
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    box-shadow: var(--shadow-soft);
+  }
+  
+  .card-premium:hover {
+    box-shadow: var(--shadow-strong);
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.98), rgba(255, 255, 255, 0.9));
   }
   
   .umrah-glow {
