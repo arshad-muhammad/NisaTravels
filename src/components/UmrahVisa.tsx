@@ -1,93 +1,133 @@
-import { Star, Moon } from "lucide-react";
+import { Star, Moon, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { motion } from "framer-motion";
+import { useState } from "react";
+import UmrahVisaForm from "./UmrahVisaForm";
 
 const UmrahVisa = () => {
+  const [isFormOpen, setIsFormOpen] = useState(false);
+
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section id="umrah-visa" className="relative py-20 overflow-hidden">
       {/* Background Image with Overlay */}
-      <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+      <div className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{
-          backgroundImage: "url('https://images.unsplash.com/photo-1466442929976-97f336a657be?ixlib=rb-4.0.3&auto=format&fit=crop&w=2834&q=80')"
+          backgroundImage: "url('https://www.hdwallpapers.in/download/great_mosque_of_mecca_4k_hd_jumma_mubarak-HD.jpg')"
         }}
       >
-        <div className="absolute inset-0 islamic-gradient opacity-85"></div>
-        <div className="absolute inset-0 bg-black/40"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/70" />
       </div>
 
-      {/* Floating Crescent Moon */}
-      <div className="absolute top-20 right-20 animate-crescent-float crescent-glow">
-        <Moon 
-          size={48} 
-          className="text-[hsl(var(--umrah-gold))] fill-current opacity-80" 
-        />
-      </div>
+      {/* Animated Decorative Elements */}
+      <motion.div 
+        initial={{ opacity: 0, scale: 0.5 }}
+        animate={{ opacity: 0.8, scale: 1 }}
+        transition={{ duration: 2, repeat: Infinity, repeatType: "reverse" }}
+        className="absolute top-20 right-20"
+      >
+        <Moon size={48} className="text-white fill-current" />
+      </motion.div>
 
-      {/* Floating Stars */}
-      <div className="absolute top-32 left-20 animate-star-twinkle">
-        <Star 
-          size={24} 
-          className="text-[hsl(var(--umrah-gold))] fill-current opacity-70" 
-        />
-      </div>
-      <div className="absolute bottom-40 right-32 animate-star-twinkle" style={{ animationDelay: '1s' }}>
-        <Star 
-          size={20} 
-          className="text-[hsl(var(--umrah-gold))] fill-current opacity-60" 
-        />
-      </div>
-      <div className="absolute top-1/3 left-32 animate-star-twinkle" style={{ animationDelay: '2s' }}>
-        <Star 
-          size={16} 
-          className="text-[hsl(var(--umrah-gold))] fill-current opacity-50" 
-        />
-      </div>
+      {/* Animated Stars */}
+      {[...Array(5)].map((_, i) => (
+        <motion.div
+          key={i}
+          initial={{ opacity: 0, scale: 0 }}
+          animate={{ opacity: [0.4, 1, 0.4], scale: [1, 1.2, 1] }}
+          transition={{
+            duration: 3,
+            repeat: Infinity,
+            delay: i * 0.5,
+            ease: "easeInOut"
+          }}
+          className="absolute"
+          style={{
+            top: `${20 + i * 15}%`,
+            left: `${10 + i * 20}%`,
+          }}
+        >
+          <Sparkles className="text-white h-4 w-4" />
+        </motion.div>
+      ))}
 
       {/* Main Content */}
-      <div className="relative z-10 text-center px-6 max-w-4xl mx-auto animate-fadeInUp">
-        {/* Headline with Shimmer Effect */}
-        <div className="relative mb-6">
-          <h1 className="text-6xl md:text-8xl font-bold text-[hsl(var(--umrah-white))] mb-4 font-serif">
-            <span className="relative inline-block">
-              Umrah Visa
-              <div className="absolute inset-0 animate-shimmer"></div>
-            </span>
-            <br />
-            <span className="text-[hsl(var(--umrah-gold))] text-5xl md:text-7xl">
-              Now Open
-            </span>
-          </h1>
-        </div>
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+          className="space-y-8"
+        >
+          {/* Title */}
+          <h2 className="text-5xl md:text-6xl font-bold text-white">
+            Umrah Visa Services
+          </h2>
 
-        {/* Subheadline */}
-        <p className="text-xl md:text-2xl text-[hsl(var(--umrah-white))] mb-8 leading-relaxed max-w-2xl mx-auto opacity-90">
-          Begin your spiritual journey with ease. Hassle-free visa, flights, and stay – all arranged with care.
-        </p>
-
-        {/* CTA Button */}
-        <div className="flex flex-col items-center space-y-4">
-          <Button 
-            size="lg"
-            className="umrah-glow bg-[hsl(var(--umrah-gold))] hover:bg-[hsl(var(--umrah-gold-dark))] text-[hsl(var(--umrah-black))] font-semibold text-lg px-12 py-4 rounded-full border-2 border-[hsl(var(--umrah-gold))] transition-all duration-300"
-          >
-            Start Your Umrah Plan
-          </Button>
-          
-          <p className="text-[hsl(var(--umrah-gold))] text-sm font-medium animate-pulse">
-            Limited slots available – Apply now
+          {/* Subtitle */}
+          <p className="text-xl md:text-2xl text-white/90 max-w-3xl mx-auto leading-relaxed font-medium">
+            Begin your spiritual journey with our comprehensive Umrah visa services
           </p>
-        </div>
 
-        {/* Decorative Elements */}
-        <div className="mt-12 flex justify-center items-center space-x-4 opacity-60">
-          <div className="w-16 h-0.5 bg-[hsl(var(--umrah-gold))]"></div>
-          <Star size={16} className="text-[hsl(var(--umrah-gold))] fill-current" />
-          <div className="w-16 h-0.5 bg-[hsl(var(--umrah-gold))]"></div>
+          {/* Features Grid */}
+          <motion.div 
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            viewport={{ once: true }}
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12"
+          >
+            {[
+              { title: "Fast Processing", desc: "Quick visa processing within 24-48 hours" },
+              { title: "Expert Guidance", desc: "Step-by-step assistance throughout your journey" },
+              { title: "Complete Package", desc: "All-inclusive packages with accommodation" },
+              { title: "24/7 Support", desc: "Round-the-clock customer service" },
+              { title: "Easy Documentation", desc: "Simplified documentation process" },
+              { title: "Best Prices", desc: "Competitive rates and flexible payment options" }
+            ].map((feature, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 hover:bg-white/15 transition-all duration-300"
+              >
+                <h3 className="text-white text-xl font-semibold mb-2">{feature.title}</h3>
+                <p className="text-white/80">{feature.desc}</p>
+              </motion.div>
+            ))}
+          </motion.div>
+
+          {/* CTA Section */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.5 }}
+            viewport={{ once: true }}
+            className="mt-12 space-y-6"
+          >
+            <p className="text-lg text-white/90 max-w-2xl mx-auto">
+              Ready to start your spiritual journey? Let us help you make it a reality.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button
+                size="lg"
+                className="bg-white text-black hover:bg-white/90 transition-colors rounded-full text-lg px-8"
+                onClick={() => setIsFormOpen(true)}
+              >
+                Apply Now
+              </Button>
         </div>
+          </motion.div>
+        </motion.div>
       </div>
-
-      {/* Bottom Glow Effect */}
-      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[hsl(var(--umrah-gold))/0.1] to-transparent"></div>
+      
+      {/* Umrah Visa Application Form */}
+      <UmrahVisaForm 
+        isOpen={isFormOpen} 
+        onClose={() => setIsFormOpen(false)} 
+      />
     </section>
   );
 };

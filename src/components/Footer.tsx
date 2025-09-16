@@ -1,103 +1,114 @@
 
-import { Facebook, Instagram, Twitter, Youtube, MapPin, Phone, Mail } from "lucide-react";
+import { Facebook, Twitter, Instagram, Youtube, Mail, Phone, MapPin, Globe } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-900 text-white">
-      <div className="container mx-auto px-4 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+    <footer className="bg-gray-900 text-white pt-16 pb-8">
+      <div className="container mx-auto px-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Company Info */}
-          <div className="space-y-4 animate-slideInLeft opacity-0 [animation-delay:0.1s]">
-            <h3 className="text-2xl font-bold gradient-text">TravelWithUs</h3>
+          <div className="space-y-6">
+            <div className="flex items-center">
+              <img src="/logo.jpg" alt="Nisa Travels" className="h-12 w-auto mr-2 rounded-full" />
+              <h2 className="text-2xl font-bold">
+                Nisa<span className="text-primary">Travels</span>
+              </h2>
+            </div>
             <p className="text-gray-400 leading-relaxed">
-              Creating unforgettable travel experiences around the world. 
-              Your adventure begins with us.
+              Your trusted partner for unforgettable journeys. Making travel dreams come true since 2010.
             </p>
             <div className="flex space-x-4">
-              <a href="#" className="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center hover:bg-blue-700 transition-colors duration-300">
+              <a href="#" className="text-gray-400 hover:text-primary transition-colors">
                 <Facebook className="h-5 w-5" />
               </a>
-              <a href="#" className="w-10 h-10 bg-pink-600 rounded-full flex items-center justify-center hover:bg-pink-700 transition-colors duration-300">
-                <Instagram className="h-5 w-5" />
-              </a>
-              <a href="#" className="w-10 h-10 bg-blue-400 rounded-full flex items-center justify-center hover:bg-blue-500 transition-colors duration-300">
+              <a href="#" className="text-gray-400 hover:text-primary transition-colors">
                 <Twitter className="h-5 w-5" />
               </a>
-              <a href="#" className="w-10 h-10 bg-red-600 rounded-full flex items-center justify-center hover:bg-red-700 transition-colors duration-300">
+              <a href="#" className="text-gray-400 hover:text-primary transition-colors">
+                <Instagram className="h-5 w-5" />
+              </a>
+              <a href="#" className="text-gray-400 hover:text-primary transition-colors">
                 <Youtube className="h-5 w-5" />
               </a>
             </div>
           </div>
 
           {/* Quick Links */}
-          <div className="space-y-4 animate-slideInLeft opacity-0 [animation-delay:0.2s]">
-            <h4 className="text-lg font-semibold">Quick Links</h4>
-            <ul className="space-y-2">
-              {["About Us", "Our Services", "Destinations", "Travel Packages", "Contact Us", "Blog"].map((link) => (
-                <li key={link}>
-                  <a href="#" className="text-gray-400 hover:text-white transition-colors duration-300 hover:translate-x-1 inline-block">
-                    {link}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Travel Categories */}
-          <div className="space-y-4 animate-slideInLeft opacity-0 [animation-delay:0.3s]">
-            <h4 className="text-lg font-semibold">Travel Categories</h4>
-            <ul className="space-y-2">
-              {["Adventure Tours", "Honeymoon Packages", "Family Vacations", "Luxury Travel", "Beach Holidays", "Cultural Tours"].map((category) => (
-                <li key={category}>
-                  <a href="#" className="text-gray-400 hover:text-white transition-colors duration-300 hover:translate-x-1 inline-block">
-                    {category}
-                  </a>
-                </li>
-              ))}
+          <div>
+            <h3 className="text-lg font-semibold mb-6">Quick Links</h3>
+            <ul className="space-y-4">
+              <li>
+                <a href="#" className="text-gray-400 hover:text-primary transition-colors">About Us</a>
+              </li>
+              <li>
+                <a href="#" className="text-gray-400 hover:text-primary transition-colors">Destinations</a>
+              </li>
+              <li>
+                <a href="#" className="text-gray-400 hover:text-primary transition-colors">Tour Packages</a>
+              </li>
+              <li>
+                <a href="#" className="text-gray-400 hover:text-primary transition-colors">Travel Blog</a>
+              </li>
+              <li>
+                <a href="#" className="text-gray-400 hover:text-primary transition-colors">Contact Us</a>
+              </li>
             </ul>
           </div>
 
           {/* Contact Info */}
-          <div className="space-y-4 animate-slideInLeft opacity-0 [animation-delay:0.4s]">
-            <h4 className="text-lg font-semibold">Contact Info</h4>
+          <div>
+            <h3 className="text-lg font-semibold mb-6">Contact Info</h3>
+            <ul className="space-y-4">
+              <li className="flex items-start space-x-3">
+                <MapPin className="h-5 w-5 text-primary flex-shrink-0" />
+                <span className="text-gray-400">123 Travel Street, Dubai, UAE</span>
+              </li>
+              <li className="flex items-center space-x-3">
+                <Phone className="h-5 w-5 text-primary flex-shrink-0" />
+                <span className="text-gray-400">+971 50 123 4567</span>
+              </li>
+              <li className="flex items-center space-x-3">
+                <Mail className="h-5 w-5 text-primary flex-shrink-0" />
+                <span className="text-gray-400">info@nisatravels.com</span>
+              </li>
+            </ul>
+          </div>
+
+          {/* Newsletter */}
+          <div>
+            <h3 className="text-lg font-semibold mb-6">Newsletter</h3>
+            <p className="text-gray-400 mb-4">
+              Subscribe to our newsletter for travel tips and exclusive offers.
+            </p>
             <div className="space-y-3">
-              <div className="flex items-center gap-3">
-                <MapPin className="h-5 w-5 text-orange-400" />
-                <span className="text-gray-400 text-sm">123 Travel Street, Adventure City, AC 12345</span>
-              </div>
-              <div className="flex items-center gap-3">
-                <Phone className="h-5 w-5 text-orange-400" />
-                <span className="text-gray-400 text-sm">+1 (555) 123-4567</span>
-              </div>
-              <div className="flex items-center gap-3">
-                <Mail className="h-5 w-5 text-orange-400" />
-                <span className="text-gray-400 text-sm">hello@travelwithus.com</span>
-              </div>
-            </div>
-            <div className="mt-4">
-              <p className="text-sm text-gray-400">
-                <span className="text-orange-400">24/7 Support:</span><br />
-                We're here to help you anytime!
-              </p>
+              <input
+                type="email"
+                placeholder="Your email address"
+                className="w-full px-4 py-2 rounded-lg bg-gray-800 border border-gray-700 text-gray-300 placeholder-gray-500 focus:outline-none focus:border-primary"
+              />
+              <Button className="w-full bg-primary hover:bg-primary-600 text-white rounded-lg">
+                Subscribe
+              </Button>
             </div>
           </div>
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-gray-800 mt-12 pt-8">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+        <div className="mt-12 pt-8 border-t border-gray-800">
+          <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <p className="text-gray-400 text-sm">
-              © 2024 TravelWithUs. All rights reserved.
+              © {new Date().getFullYear()} Nisa Travels. All rights reserved.
             </p>
-            <div className="flex space-x-6 text-sm">
-              <a href="#" className="text-gray-400 hover:text-white transition-colors duration-300">
+            <div className="flex space-x-6">
+              <a href="#" className="text-gray-400 hover:text-primary text-sm transition-colors">
                 Privacy Policy
               </a>
-              <a href="#" className="text-gray-400 hover:text-white transition-colors duration-300">
+              <a href="#" className="text-gray-400 hover:text-primary text-sm transition-colors">
                 Terms of Service
               </a>
-              <a href="#" className="text-gray-400 hover:text-white transition-colors duration-300">
-                Cookie Policy
+              <a href="#" className="text-gray-400 hover:text-primary text-sm transition-colors">
+                FAQ
               </a>
             </div>
           </div>

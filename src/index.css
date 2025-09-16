@@ -3,12 +3,55 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --primary-color: #29c0ed;
+  --primary-light: #6bc4e3;
+  --primary-dark: #3a91b0;
+  --primary-hover: #3a91b0;
+  --gradient-start: #29c0ed;
+  --gradient-end: #6bc4e3;
+}
+
+@layer utilities {
+  .gradient-text {
+    background: linear-gradient(135deg, #29c0ed 0%, #6bc4e3 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  .gradient-bg {
+    background: linear-gradient(135deg, #29c0ed 0%, #6bc4e3 100%);
+  }
+  
+  .gradient-border {
+    border-image: linear-gradient(135deg, #29c0ed 0%, #6bc4e3 100%) 1;
+  }
+  
+  .animate-gradient {
+    background-size: 200% 200%;
+    animation: gradient 3s ease infinite;
+  }
+}
+
 @keyframes float {
   0%, 100% {
     transform: translateY(0px);
   }
   50% {
     transform: translateY(-20px);
+  }
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
   }
 }
 

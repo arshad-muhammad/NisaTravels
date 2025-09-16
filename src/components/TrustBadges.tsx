@@ -14,7 +14,7 @@ const TrustBadges = () => {
       icon: Building,
       title: "Govt. Registered",
       description: "Licensed and registered travel company with all necessary certifications",
-      color: "text-blue-500"
+      color: "text-primary"
     },
     {
       icon: CheckCircle,

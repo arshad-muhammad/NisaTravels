@@ -1,160 +1,124 @@
 
-import { useState } from "react";
-import { MapPin, Phone, Mail, Send } from "lucide-react";
+import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { toast } from "@/hooks/use-toast";
+import { MapPin, Phone, Mail, Clock } from "lucide-react";
 
 const Contact = () => {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    message: "",
-    travelInterest: ""
-  });
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    
-    // Simulate form submission
-    toast({
-      title: "Message Sent!",
-      description: "We'll get back to you within 24 hours.",
-    });
-    
-    // Reset form
-    setFormData({
-      name: "",
-      email: "",
-      message: "",
-      travelInterest: ""
-    });
-  };
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    });
-  };
-
   return (
-    <section className="py-20 bg-gradient-to-r from-blue-900 to-purple-900">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-white">
-            Get in <span className="text-orange-300">Touch</span>
+    <section id="contact" className="relative p-5 overflow-hidden">
+      {/* Decorative background elements */}
+      <div className="absolute inset-0 bg-grid-pattern opacity-[0.015]" />
+      <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-primary/20 to-transparent" />
+      
+      <div className="relative bg-gradient-to-br from-primary-700 via-primary-700 to-primary-900 rounded-lg max-w-7xl mx-auto p-4 sm:px-6 lg:px-8">
+        {/* Section Header */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+          className="text-center mb-16"
+        >
+          <h2 className="text-3xl font-bold text-white sm:text-4xl mb-4">
+            Get in Touch
           </h2>
-          <p className="text-xl text-white opacity-90 max-w-2xl mx-auto">
-            Ready to start your next adventure? Contact us and let's plan your perfect getaway
+          <p className="text-lg text-white/80 max-w-2xl mx-auto">
+            Have questions about our services? We're here to help you plan your perfect journey.
           </p>
-        </div>
+        </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
+        <div className="grid place-items-center">
           {/* Contact Form */}
-          <Card className="glass-effect border-white border-opacity-20">
-            <CardHeader>
-              <CardTitle className="text-2xl text-white">Send Us a Message</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <Input
-                    name="name"
-                    placeholder="Your Name"
-                    value={formData.name}
-                    onChange={handleChange}
-                    className="bg-white bg-opacity-10 border-white border-opacity-20 text-white placeholder:text-white placeholder:opacity-70"
-                    required
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+            className="bg-white/10 backdrop-blur-sm rounded-2xl shadow-lg p-8 border border-white/20 w-full max-w-2xl"
+          >
+            <form className="space-y-6">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                <motion.div
+                  initial={{ opacity: 0, y: 10 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.4 }}
+                  viewport={{ once: true }}
+                >
+                  <label className="block text-sm font-medium text-white/90 mb-2">
+                    First Name
+                  </label>
+                  <Input 
+                    type="text"
+                    className="w-full bg-white/5 border-white/10 focus:border-primary/40 focus:ring-primary/30 rounded-lg text-white placeholder:text-white/50"
+                    placeholder="John"
                   />
-                  <Input
-                    name="email"
-                    type="email"
-                    placeholder="Email Address"
-                    value={formData.email}
-                    onChange={handleChange}
-                    className="bg-white bg-opacity-10 border-white border-opacity-20 text-white placeholder:text-white placeholder:opacity-70"
-                    required
+                </motion.div>
+                <motion.div
+                  initial={{ opacity: 0, y: 10 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.4, delay: 0.1 }}
+                  viewport={{ once: true }}
+                >
+                  <label className="block text-sm font-medium text-white/90 mb-2">
+                    Last Name
+                  </label>
+                  <Input 
+                    type="text"
+                    className="w-full bg-white/5 border-white/10 focus:border-primary/40 focus:ring-primary/30 rounded-lg text-white placeholder:text-white/50"
+                    placeholder="Doe"
                   />
-                </div>
-                
-                <Input
-                  name="travelInterest"
-                  placeholder="Travel Interest (e.g., Adventure, Beach, Cultural)"
-                  value={formData.travelInterest}
-                  onChange={handleChange}
-                  className="bg-white bg-opacity-10 border-white border-opacity-20 text-white placeholder:text-white placeholder:opacity-70"
+                </motion.div>
+              </div>
+
+              <motion.div
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.4, delay: 0.2 }}
+                viewport={{ once: true }}
+              >
+                <label className="block text-sm font-medium text-white/90 mb-2">
+                  Email
+                </label>
+                <Input 
+                  type="email"
+                  className="w-full bg-white/5 border-white/10 focus:border-primary/40 focus:ring-primary/30 rounded-lg text-white placeholder:text-white/50"
+                  placeholder="john@example.com"
                 />
-                
-                <Textarea
-                  name="message"
-                  placeholder="Tell us about your dream trip..."
-                  value={formData.message}
-                  onChange={handleChange}
-                  rows={5}
-                  className="bg-white bg-opacity-10 border-white border-opacity-20 text-white placeholder:text-white placeholder:opacity-70"
-                  required
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.4, delay: 0.3 }}
+                viewport={{ once: true }}
+              >
+                <label className="block text-sm font-medium text-white/90 mb-2">
+                  Message
+                </label>
+                <Textarea 
+                  className="w-full bg-white/5 border-white/10 focus:border-primary/40 focus:ring-primary/30 rounded-lg text-white placeholder:text-white/50 min-h-[150px]"
+                  placeholder="How can we help you?"
                 />
-                
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.4, delay: 0.4 }}
+                viewport={{ once: true }}
+                className="flex justify-center"
+              >
                 <Button 
-                  type="submit" 
-                  className="w-full bg-orange-500 hover:bg-orange-600 text-white py-3 text-lg rounded-full hover-glow"
+                  type="submit"
+                  className="bg-white hover:bg-white/90 text-primary font-semibold px-8 py-2 rounded-lg transition-colors duration-300 min-w-[200px]"
                 >
                   Send Message
-                  <Send className="ml-2 h-5 w-5" />
                 </Button>
-              </form>
-            </CardContent>
-          </Card>
-
-          {/* Contact Info & Map */}
-          <div className="space-y-8">
-            {/* Contact Information */}
-            <div className="grid gap-6">
-              <div className="flex items-center gap-4 text-white">
-                <div className="w-12 h-12 bg-orange-500 rounded-full flex items-center justify-center">
-                  <MapPin className="h-6 w-6" />
-                </div>
-                <div>
-                  <h3 className="font-semibold text-lg">Visit Our Office</h3>
-                  <p className="opacity-80">123 Travel Street, Adventure City, AC 12345</p>
-                </div>
-              </div>
-              
-              <div className="flex items-center gap-4 text-white">
-                <div className="w-12 h-12 bg-orange-500 rounded-full flex items-center justify-center">
-                  <Phone className="h-6 w-6" />
-                </div>
-                <div>
-                  <h3 className="font-semibold text-lg">Call Us</h3>
-                  <p className="opacity-80">+1 (555) 123-4567</p>
-                </div>
-              </div>
-              
-              <div className="flex items-center gap-4 text-white">
-                <div className="w-12 h-12 bg-orange-500 rounded-full flex items-center justify-center">
-                  <Mail className="h-6 w-6" />
-                </div>
-                <div>
-                  <h3 className="font-semibold text-lg">Email Us</h3>
-                  <p className="opacity-80">hello@travelwithus.com</p>
-                </div>
-              </div>
-            </div>
-
-            {/* Map Placeholder */}
-            <div className="relative h-64 rounded-xl overflow-hidden glass-effect">
-              <div className="absolute inset-0 bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center">
-                <div className="text-center text-white">
-                  <MapPin className="h-16 w-16 mx-auto mb-4 animate-bounce-slow" />
-                  <p className="text-lg font-semibold">Find Us Here</p>
-                  <p className="opacity-80">Interactive Map Coming Soon</p>
-                </div>
-              </div>
-            </div>
-          </div>
+              </motion.div>
+            </form>
+          </motion.div>
         </div>
       </div>
     </section>

@@ -1,73 +1,97 @@
-# Welcome to your Lovable project
+# Nisa Travels
 
-## Project info
+A modern travel and tourism website built with React, Tailwind CSS, and Framer Motion.
 
-**URL**: https://lovable.dev/projects/1c445977-9598-4298-8d46-2036427c9e0b
+## Features
 
-## How can I edit this code?
+- Modern and responsive design
+- Smooth animations and transitions
+- Interactive booking system
+- Tour package showcase
+- Travel destination guides
+- User authentication
+- Newsletter subscription
+- Contact form
+- Social media integration
 
-There are several ways of editing your application.
+## Tech Stack
 
-**Use Lovable**
+- React
+- TypeScript
+- Tailwind CSS
+- Framer Motion
+- Radix UI
+- Lucide Icons
+- React Router
+- React Hook Form
+- Zod Validation
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/1c445977-9598-4298-8d46-2036427c9e0b) and start prompting.
+## Getting Started
 
-Changes made via Lovable will be committed automatically to this repo.
+1. Clone the repository:
+```bash
+git clone https://github.com/yourusername/nisa-travels.git
+cd nisa-travels
+```
 
-**Use your preferred IDE**
+2. Install dependencies:
+```bash
+npm install
+```
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+3. Start the development server:
+```bash
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+4. Open [http://localhost:5173](http://localhost:5173) in your browser.
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+## Build
 
-**Use GitHub Codespaces**
+To build the project for production:
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+```bash
+npm run build
+```
 
-## What technologies are used for this project?
+## Project Structure
 
-This project is built with:
+```
+nisa-travels/
+├── public/
+├── src/
+│   ├── components/
+│   │   ├── ui/
+│   │   └── [Component].tsx
+│   ├── pages/
+│   ├── lib/
+│   ├── hooks/
+│   ├── App.tsx
+│   └── main.tsx
+├── package.json
+└── README.md
+```
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+## Contributing
 
-## How can I deploy this project?
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
 
-Simply open [Lovable](https://lovable.dev/projects/1c445977-9598-4298-8d46-2036427c9e0b) and click on Share -> Publish.
+## License
 
-## Can I connect a custom domain to my Lovable project?
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-Yes, you can!
+## Contact
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+- Website: [nisatravels.com](https://nisatravels.com)
+- Email: info@nisatravels.com
+- Phone: +971 50 123 4567
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+## Acknowledgments
+
+- Design inspiration from modern travel websites
+- Icons from [Lucide Icons](https://lucide.dev)
+- UI components from [shadcn/ui](https://ui.shadcn.com)
