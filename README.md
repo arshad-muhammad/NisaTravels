@@ -88,7 +88,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 - Website: [nisatravels.com](https://nisatravels.com)
 - Email: info@nisatravels.com
-- Phone: +971 50 123 4567
+- Phone: +91 9071147311
 
 ## Acknowledgments
 

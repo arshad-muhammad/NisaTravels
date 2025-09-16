@@ -41,7 +41,7 @@ const Index = () => {
       "longitude": "77.5946"
     },
     "openingHours": "Mo,Tu,We,Th,Fr,Sa 09:00-18:00",
-    "telephone": "+91 50 123 4567",
+    "telephone": "+91 9071147311",
     "priceRange": "₹₹₹",
     "aggregateRating": {
       "@type": "AggregateRating",
