@@ -11,11 +11,7 @@
     "preview": "vite preview",
     "sitemap": "node scripts/generate-sitemap.js",
     "optimize-images": "node scripts/optimize-images.js",
-    "prebuild": "npm run optimize-images && npm run sitemap",
-    "postbuild": "react-snap"
-  },
-  "reactSnap": {
-    "source": "dist"
+    "prebuild": "npm run optimize-images && npm run sitemap"
   },
   "dependencies": {
     "@google/generative-ai": "^0.24.1",
